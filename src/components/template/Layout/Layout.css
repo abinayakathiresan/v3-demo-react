@@ -1,0 +1,41 @@
+.layout__wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.layout__logo{
+  padding: 16px 0px;
+
+}
+.layout__nav {
+  background-color: cornflowerblue;
+  color: white;
+}
+.layout__nav ul{
+    display: flex;
+    padding: 0;
+
+}
+.layout__nav ul li{
+    list-style: none;
+    text-align: left;
+    padding: 4px 8px;
+    border-right: 2px solid white;
+
+}
+.layout__nav ul li:last-child{
+    border-right: none;
+}
+.layout__nav ul li:first-child{
+    padding-left: 0px;
+}
+.layout__nav a {
+  color: white;
+}
+.layout__content{
+  padding: 16px 0;
+  flex: 1 0 0;
+}
+.layout__footer {
+  text-align: center;
+}
