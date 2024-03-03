@@ -28,6 +28,16 @@ function Layout() {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/counter" exact>
+                    Counter(Redux Toolkit)
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/todos" exact>
+                    Todos(Redux Toolkit)
+                  </Link>
+                </li>
+                <li>
                   <Link to="/users" exact>
                     Users
                   </Link>

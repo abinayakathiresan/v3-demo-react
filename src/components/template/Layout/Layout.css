@@ -20,7 +20,7 @@
     list-style: none;
     text-align: left;
     padding: 4px 8px;
-    border-right: 2px solid white;
+    border-right: 2px solid #414c6a;
 
 }
 .layout__nav ul li:last-child{
@@ -30,7 +30,10 @@
     padding-left: 0px;
 }
 .layout__nav a {
-  color: white;
+  color: #414c6a;
+}
+.layout__nav a:hover{
+  color: midnightblue;
 }
 .layout__content{
   padding: 16px 0;
