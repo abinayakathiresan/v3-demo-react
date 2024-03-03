@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContextAPI.css';
-import { ThemeContext } from '../../context/Context';
+import { ThemeContext } from '../../../context/Context';
 function ContextAPI() {
   const [themeType, setThemeType] = React.useState('classic');
 
