@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
     getTodosAsync,
-  } from "../../../state/slices/counterSlice";
+  } from "../../../state/slices/todosSlice";
 import "./Todos.css";
 function Todos(){
-    const {todos, isTodosLoading} = useSelector((state) => state.counter);
+    const {todos, isTodosLoading} = useSelector((state) => state.todos);
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getTodosAsync());

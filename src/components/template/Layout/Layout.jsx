@@ -47,6 +47,16 @@ function Layout() {
                     Contact Us
                   </Link>
                 </li>
+                <li>
+                  <Link to="/favcolor" exact>
+                    Fav Color
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/alarm" exact>
+                    Alarm
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

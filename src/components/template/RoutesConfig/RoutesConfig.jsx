@@ -6,6 +6,9 @@ import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import ContextAPI from "../../pages/ContextAPI/ContextAPI";
 import Counter from "../../pages/Counter/Counter";
 import Todos from "../../pages/Todos/Todos";
+import Favcolor from "../../pages/Favcolor/Favcolor";
+import Alarm from "../../pages/Alarm/Alarm";
+
   
 const RouteConfig = function () {
   return (
@@ -15,7 +18,10 @@ const RouteConfig = function () {
         <Route path="/users" element={<Users />} exact={true} />   
         <Route path="/context-api" element={<ContextAPI />} exact={true} />   
         <Route path="/counter" element={<Counter />} exact={true} />   
-        <Route path="/todos" element={<Todos />} exact={true} />   
+        <Route path="/todos" element={<Todos />} exact={true} /> 
+        <Route path="/favcolor" element={<Favcolor/>} exact={true} /> 
+        <Route path="/alarm" element={<Alarm/>} exact={true} /> 
+          
         <Route element={<ErrorPage/>} path="*"/>   
       </Routes>
       

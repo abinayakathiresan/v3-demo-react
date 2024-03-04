@@ -2,9 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
     decrement,
-    increment,
     incrementByAmount,
-    incrementAsync,
   } from "../../../state/slices/counterSlice";
 import "./Counter.css";
 function Counter(){
@@ -15,7 +13,7 @@ function Counter(){
       {isLoading ?<div>Loading...</div>:<h2>{count}</h2>}
       <div className="row">
         <div className="col-2">
-        <button onClick={() => dispatch(incrementAsync(10))}>Increment</button>
+        <button onClick={() => dispatch(incrementByAmount(10))}>Increment</button>
         </div>
         <div className="col-2">
         <button onClick={() => dispatch(decrement())}>Decrement</button>

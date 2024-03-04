@@ -2,9 +2,7 @@ import {   createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: 0,
-  isLoading: false,
-  todos: null,
-  isTodosLoading: false,
+  isLoading: false
 };
 
 const counterSlice = createSlice({
@@ -21,7 +19,7 @@ const counterSlice = createSlice({
       state.value += action.payload;
     },
   },
-  extraReducers: (builder) => {
+  /*extraReducers: (builder) => {
     builder
     .addCase(incrementAsync.pending, (state) => {
       console.log("incrementAsync.pending");
@@ -33,35 +31,18 @@ const counterSlice = createSlice({
         state.isLoading=false;
         state.value += action.payload;
       }
-    ).addCase(getTodosAsync.pending, (state) => {
-      console.log("incrementAsync.pending");
-      state.isTodosLoading=true;
-    })
-    .addCase(
-      getTodosAsync.fulfilled,
-      (state, action) => {
-        state.isTodosLoading=false;
-        state.todos = action.payload;
-      }
-    );
-  },
+    ); 
+  },*/
 });
-
+/*
 export const incrementAsync = createAsyncThunk(
   "counter/incrementAsync",
   async (amount) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     return amount;
   }
-);
+);*/
 
-export const getTodosAsync = createAsyncThunk(
-  "counter/getTodosAsync",
-  async () => {
-    const todos = await fetch("https://jsonplaceholder.typicode.com/todos");
-    return todos.json();
-  }
-);
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
 export default counterSlice.reducer;

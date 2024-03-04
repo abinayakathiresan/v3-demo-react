@@ -2,9 +2,9 @@ import React from 'react';
 import './ContextAPI.css';
 import { ThemeContext } from '../../../context/Context';
 function ContextAPI() {
-  const [themeType, setThemeType] = React.useState('classic');
+  const [themeType, setThemeType] = React.useState('windows');
 
-  const [themeName, setThemeName] = React.useState('windows');
+  const [themeName, setThemeName] = React.useState('classic');
   return (
     <ThemeContext.Provider
       value={{ themeType, setThemeType, themeName, setThemeName }}
@@ -20,6 +20,7 @@ function ContextAPI() {
 }
 export default ContextAPI;
 function ContextParent() {
+  console.log("ContextParent");
   return (
     <div className="border-wrapper">
       Context Parent
@@ -30,6 +31,7 @@ function ContextParent() {
   );
 }
 function ContextChild() {
+  console.log("ContextChild");
   return (
     <div className="border-wrapper">
       Context Child
@@ -41,6 +43,7 @@ function ContextChild() {
 }
 
 function ContextChild2() {
+  console.log("ContextChild2");
   const themectxt = React.useContext(ThemeContext);
   return (
     <div className="border-wrapper">
