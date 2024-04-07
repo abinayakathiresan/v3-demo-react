@@ -9,6 +9,7 @@ export const store = configureStore({
     todos: todosReducer,
     favcolor: favcolorReducer, 
     alarmReducer: alarmReducer,
+    incdecCounter: incdecCounterReducer,
   },
 });
 
