@@ -27,9 +27,10 @@ const Fees = ()=> {
         setAmount("");
     }
 
-    function handleEdit(item)
-    {
-       
+    const handleEdit = (item)=> {
+        setName(item.name);
+        setMonth(item.month);
+        setAmount(item.amount);
     }
 
     function handleDelete(item)
@@ -57,8 +58,8 @@ const Fees = ()=> {
                             <div className="fess-list__item">{item.name}</div>
                             <div className="fess-list__item">{item.month}</div>
                             <div className="fess-list__item">{item.amount}</div>
-                            <div><button onClick = {handleEdit(item)}>Edit</button>
-                            <button onClick = {handleDelete(item)}>Delete</button></div>
+                            <div><button onClick = {()=>handleEdit(item)}>Edit</button>
+                            <button onClick = {()=>handleDelete(item)}>Delete</button></div>
                         </div>
             })}</div>
         </div>
