@@ -29,7 +29,7 @@ const Fees = ()=> {
 
     function handleEdit(item)
     {
-        
+       
     }
 
     function handleDelete(item)
@@ -53,7 +53,7 @@ const Fees = ()=> {
                 <div className="fess-list__item">Action</div>
             </div>
             <div>{fees.map((item)=> {
-                return <div className="fees-list__row">
+                return <div className="fees-list__row" key = {item.name}>
                             <div className="fess-list__item">{item.name}</div>
                             <div className="fess-list__item">{item.month}</div>
                             <div className="fess-list__item">{item.amount}</div>
