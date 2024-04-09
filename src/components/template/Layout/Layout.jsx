@@ -62,6 +62,11 @@ function Layout() {
                     IncrementDecrement Counter
                   </Link>
                 </li>
+                <li>
+                  <Link to="/studentfees" exact>
+                    Fees Details
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

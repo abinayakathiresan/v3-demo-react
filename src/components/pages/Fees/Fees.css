@@ -1,0 +1,8 @@
+.fees-list__row
+{
+    display: flex;
+}
+.fess-list__item
+{
+    padding: 10px 30px 20px 30px;
+}

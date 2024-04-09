@@ -4,6 +4,7 @@ import todosReducer from "./slices/todosSlice";
 import favcolorReducer from "./slices/favcolorSlice";
 import alarmReducer from "./slices/alarmSlice";
 import incdecCounterReducer from "./slices/incdecCounterSlice";
+import feesReducer from "./slices/feesSlice";
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
@@ -11,6 +12,7 @@ export const store = configureStore({
     favcolor: favcolorReducer, 
     alarmReducer: alarmReducer,
     incdecCounter: incdecCounterReducer,
+    fees:feesReducer,
   },
 });
 

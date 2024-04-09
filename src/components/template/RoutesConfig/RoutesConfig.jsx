@@ -9,6 +9,7 @@ import Todos from "../../pages/Todos/Todos";
 import Favcolor from "../../pages/Favcolor/Favcolor";
 import Alarm from "../../pages/Alarm/Alarm";
 import IncDec from "../../pages/IncDec/IncDec";
+import Fees from "../../pages/Fees/Fees";
 
   
 const RouteConfig = function () {
@@ -23,7 +24,7 @@ const RouteConfig = function () {
         <Route path="/favcolor" element={<Favcolor/>} exact={true} /> 
         <Route path="/alarm" element={<Alarm/>} exact={true} /> 
         <Route path="/incdeccounter" element={<IncDec/>} exact={true} /> 
-          
+        <Route path="/studentfees" element={<Fees/>} exact={true} /> 
         <Route element={<ErrorPage/>} path="*"/>   
       </Routes>
       
