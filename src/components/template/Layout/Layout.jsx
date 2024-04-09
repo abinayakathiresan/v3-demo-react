@@ -57,6 +57,11 @@ function Layout() {
                     Alarm
                   </Link>
                 </li>
+                <li>
+                  <Link to="/incdeccounter" exact>
+                    IncrementDecrement Counter
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

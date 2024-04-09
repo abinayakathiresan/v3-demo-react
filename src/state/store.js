@@ -3,6 +3,7 @@ import counterReducer from "./slices/counterSlice";
 import todosReducer from "./slices/todosSlice";
 import favcolorReducer from "./slices/favcolorSlice";
 import alarmReducer from "./slices/alarmSlice";
+import incdecCounterReducer from "./slices/incdecCounterSlice";
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
