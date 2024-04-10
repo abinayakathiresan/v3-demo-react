@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addStudent } from "../../../state/slices/feesSlice";
+import { addStudent, editStudent} from "../../../state/slices/feesSlice";
 import "./Fees.css";
+import { useNavigate, useParams } from "react-router-dom";
+
 const Fees = ()=> {
     const[name, setName] = useState("");
     const[month, setMonth] = useState("");
@@ -9,14 +11,37 @@ const Fees = ()=> {
     const[students, setStudents] = useState("");
 
     const dispatch = useDispatch();
+    const nav = useNavigate();
+    let {action, id} = useParams();
     const {fees, isLoading} = useSelector((state)=>state.fees);
     
+    let studentObj =  fees && fees.find((item)=> {
+        return item.id == id;
+    });
+console.log(studentObj);
+    
+    useEffect(()=>{       
+        studentObj && setName(studentObj.name);
+        studentObj && setMonth(studentObj.month);
+        studentObj && setAmount(studentObj.amount);
+    },[studentObj]);
+            
 
     function handleSubmit(){
-        let id = Math.random(9,999);
-        let stuObj = {id:id, name:name, month:month, amount:amount};
-        setStudents(stuObj);
-        dispatch(addStudent(stuObj));
+        if(action === "edit")
+        {
+            let existingstudentObj = {...studentObj, name,month,amount};
+            dispatch(editStudent(existingstudentObj));
+
+        }
+        else{
+            let id = Math.random(9,999);
+            let stuObj = {id:id, name:name, month:month, amount:amount};
+            setStudents(stuObj);
+            dispatch(addStudent(stuObj));
+            
+        }
+        nav("/feeslist");
         handleReset();
     }
 
@@ -27,17 +52,7 @@ const Fees = ()=> {
         setAmount("");
     }
 
-    const handleEdit = (item)=> {
-        setName(item.name);
-        setMonth(item.month);
-        setAmount(item.amount);
-    }
-
-    function handleDelete(item)
-    {
-
-    }
-
+   
     return(
         <div>
             <h2>Student Details</h2>
@@ -45,23 +60,7 @@ const Fees = ()=> {
             <div>Month:<input type = "month" onChange = {(e)=> setMonth(e.target.value)} value = {month}></input></div>
             <div>Amount:<input type = "number" onChange = {(e)=> setAmount(e.target.value)} value = {amount}></input></div>
             <div><button onClick = {handleSubmit}>Submit</button></div>
-
-            <div><h2>Student Fees Details</h2></div>
-            <div className="fees-list__row">
-                <div className="fess-list__item">Name</div>
-                <div className="fess-list__item">Month</div>
-                <div className="fess-list__item">Amount</div>
-                <div className="fess-list__item">Action</div>
-            </div>
-            <div>{fees.map((item)=> {
-                return <div className="fees-list__row" key = {item.name}>
-                            <div className="fess-list__item">{item.name}</div>
-                            <div className="fess-list__item">{item.month}</div>
-                            <div className="fess-list__item">{item.amount}</div>
-                            <div><button onClick = {()=>handleEdit(item)}>Edit</button>
-                            <button onClick = {()=>handleDelete(item)}>Delete</button></div>
-                        </div>
-            })}</div>
+            
         </div>
     )
 }

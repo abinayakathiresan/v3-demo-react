@@ -67,6 +67,11 @@ function Layout() {
                     Fees Details
                   </Link>
                 </li>
+                <li>
+                  <Link to="/studentlist" exact>
+                    Fees List
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

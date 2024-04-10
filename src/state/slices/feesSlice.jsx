@@ -12,8 +12,20 @@ const feesSlice = createSlice({
         addStudent: (state, action)=> {
             let newStudent = action.payload;
             state.fees.push(newStudent);
+        },
+        editStudent: (state, action) => {
+            state.fees = state.fees.map(item=>{
+              return item.id == action.payload.id? action.payload : item;
+            })
+            
+        },
+        deleteStudent: (state, action) => {
+            state.fees = state.fees.filter(item=>{
+              return item.id !== action.payload.id;
+            })
+            
         }
     },
 })
-export const {addStudent} = feesSlice.actions;
+export const {addStudent, editStudent,deleteStudent} = feesSlice.actions;
 export default feesSlice.reducer;
