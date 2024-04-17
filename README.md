@@ -1,5 +1,7 @@
 # React + Vite
 
+This is one of my app.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
@@ -13,5 +15,6 @@ https://www.telerik.com/blogs/react-usecontext-hook
 #React Redux-toolkit reference
 https://www.freecodecamp.org/news/use-redux-toolkit-to-manage-state-in-react-apps/
 
-# React Redux-toolkit-query reference 
+# React Redux-toolkit-query reference
+
 https://www.youtube.com/watch?v=HyZzCHgG3AY
